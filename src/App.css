@@ -1,0 +1,74 @@
+.main {
+  margin: 3rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: rgb(129, 135, 139);
+}
+
+.header {
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  color: rgb(219, 219, 219);
+  font-weight: 700;
+}
+
+.footer {
+  height: 4rem;
+}
+
+.listItem {
+  margin-bottom: 3rem;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #edc586;
+  background-color: black;
+  cursor: pointer;
+}
+
+.listItem:hover {
+  border-color: #ffefd6;
+}
+
+.infoContainer {
+  padding: 3rem;
+  padding-top: 0rem;
+}
+
+.key {
+  color: aliceblue;
+  font-size: 2rem;
+  /* margin-right: 1rem; */
+  line-height: 2.5rem;
+}
+
+.value {
+  color: #d3af76;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  line-height: 2.5rem;
+}
+
+.characterImg {
+  width: 30%;
+  margin-bottom: auto;
+}
+
+.listItemChild {
+  display: flex;
+}
+
+.button {
+  background-color: #000000;
+  padding: 0.8rem;
+  padding-inline: 2rem;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #edc586;
+  color: #edc586;
+}
+
+.button:hover {
+  color: #ffe5ba;
+  border-color: #ffe5ba;
+}
