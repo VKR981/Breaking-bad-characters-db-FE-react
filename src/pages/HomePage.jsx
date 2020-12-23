@@ -15,7 +15,8 @@ export default function HomePage() {
     if (query) {
       setFilteredData(
         data.filter((char) =>
-          char.name.toLowerCase().includes(query.toLowerCase())
+          //search everything
+          JSON.stringify(char).toLowerCase().includes(query.toLowerCase())
         )
       );
     } else {

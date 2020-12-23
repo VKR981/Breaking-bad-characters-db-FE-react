@@ -27,7 +27,10 @@ export default function Character() {
           <ListItem _key="Status: " value={state.status} />
           <ListItem _key="Nickname: " value={state.nickname} />
           <ListItem _key="Played by: " value={state.portrayed} />
-          <ListItem _key="Seasons: " value={state.appearance.join(", ")} />
+          <ListItem
+            _key="Seasons: "
+            value={state.appearance ? state.appearance.join(", ") : null}
+          />
           <ListItem _key="Quotes: " value={null} />
           <Quotes data={data} />
         </div>
