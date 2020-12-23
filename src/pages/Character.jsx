@@ -23,11 +23,11 @@ export default function Character() {
         <div className="infoContainer">
           <ListItem _key="Name: " value={state.name} />
           <ListItem _key="DOB: " value={state.birthday} />
-          <ListItem _key="Occupation: " value={state.occupation} />
+          <ListItem _key="Occupation: " value={state.occupation.join(", ")} />
           <ListItem _key="Status: " value={state.status} />
           <ListItem _key="Nickname: " value={state.nickname} />
           <ListItem _key="Played by: " value={state.portrayed} />
-          <ListItem _key="Seasons: " value={formatSeasons(state.appearance)} />
+          <ListItem _key="Seasons: " value={state.appearance.join(", ")} />
           <ListItem _key="Quotes: " value={null} />
           <Quotes data={data} />
         </div>
@@ -44,14 +44,3 @@ const Quotes = ({ data }) => (
     {data.length == 0 ? <ListItem _key="No quotes found" value={""} /> : null}
   </div>
 );
-
-const formatSeasons = (seasons) => {
-  if (seasons) {
-    return seasons.map((season, index) => {
-      if (seasons.length !== index + 1) {
-        return season + ",";
-      }
-      return season;
-    });
-  }
-};

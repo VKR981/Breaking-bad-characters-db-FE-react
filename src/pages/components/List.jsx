@@ -40,7 +40,10 @@ export default function Render({ data }) {
                   <Image size="small" src={char.img} />
                   <List.Content>
                     <ListItem _key="Name:" value={char.name} />
-                    <ListItem _key="Occupation:" value={char.occupation} />
+                    <ListItem
+                      _key="Occupation:"
+                      value={char.occupation.join(", ")}
+                    />
                     <ListItem _key="DOB:" value={char.birthday} />
                     <ListItem _key="Status:" value={char.status} />
                   </List.Content>
