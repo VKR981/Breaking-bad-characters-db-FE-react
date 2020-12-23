@@ -5,6 +5,9 @@
 }
 
 .header {
+  display: flex;
+}
+.headerText {
   margin-bottom: 3rem;
   font-size: 2.5rem;
   line-height: 2.5rem;
@@ -71,4 +74,27 @@
 .button:hover {
   color: #ffe5ba;
   border-color: #ffe5ba;
+}
+
+.searchBox {
+  margin-left: 6rem;
+  display: flex;
+  background-color: black;
+  height: 3rem;
+  width: max-content;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 1.5rem;
+}
+
+input {
+  outline: none;
+  border: none;
+  background: none;
+  color: aliceblue;
+}
+
+.icon {
+  color: aliceblue;
+  margin-right: 0.5rem !important;
 }
