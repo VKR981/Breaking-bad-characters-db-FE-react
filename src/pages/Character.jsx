@@ -46,10 +46,12 @@ const Quotes = ({ data }) => (
 );
 
 const formatSeasons = (seasons) => {
-  return seasons.map((season, index) => {
-    if (seasons.length !== index + 1) {
-      return season + ",";
-    }
-    return season;
-  });
+  if (seasons) {
+    return seasons.map((season, index) => {
+      if (seasons.length !== index + 1) {
+        return season + ",";
+      }
+      return season;
+    });
+  }
 };
