@@ -10,7 +10,6 @@ const URL = "https://www.breakingbadapi.com/api/characters";
 export default function HomePage() {
   const { status, data, error } = useFetch(URL);
   const [filteredData, setFilteredData] = useState(null);
-  const [searchQurey, setSearchQurey] = useState("");
 
   const filterData = (query) => {
     if (query) {
