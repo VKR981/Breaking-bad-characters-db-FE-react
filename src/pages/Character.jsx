@@ -32,18 +32,21 @@ export default function Character() {
             value={state.appearance ? state.appearance.join(", ") : null}
           />
           <ListItem _key="Quotes: " value={null} />
-          <Quotes data={data} />
+          <Quotes data={data} status={status} />
         </div>
       </div>
     </div>
   );
 }
 
-const Quotes = ({ data }) => (
+const Quotes = ({ data, status }) => (
   <div style={{ marginTop: "1rem" }}>
     {data.map((quote, index) => (
       <ListItem key={index} _key={`${index + 1}. `} value={quote.quote} />
     ))}
-    {data.length == 0 ? <ListItem _key="No quotes found" value={""} /> : null}
+    {data.length == 0 && status === "fetched" ? (
+      <ListItem _key="No quotes found" value={""} />
+    ) : null}
+    {status === "fetching" ? <ListItem _key="Loading..." value={""} /> : null}
   </div>
 );

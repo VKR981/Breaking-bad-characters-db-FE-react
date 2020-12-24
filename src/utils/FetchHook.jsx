@@ -1,7 +1,12 @@
 import { useEffect, useRef, useReducer } from "react";
 
 export const useFetch = (url) => {
-  const cache = useRef({});
+  let cache = localStorage.getItem("dataCache");
+  if (cache) {
+    cache = JSON.parse(cache);
+  } else {
+    cache = {};
+  }
 
   const initialState = {
     status: "idle",
@@ -28,14 +33,15 @@ export const useFetch = (url) => {
 
     const fetchData = async () => {
       dispatch({ type: "FETCHING" });
-      if (cache.current[url]) {
-        const data = cache.current[url];
+      if (cache[url]) {
+        const data = cache[url];
         dispatch({ type: "FETCHED", payload: data });
       } else {
         try {
           const response = await fetch(url);
           const data = await response.json();
-          cache.current[url] = data;
+          cache[url] = data;
+          localStorage.setItem("dataCache", JSON.stringify(cache));
           if (cancelRequest) return;
           dispatch({ type: "FETCHED", payload: data });
         } catch (error) {
